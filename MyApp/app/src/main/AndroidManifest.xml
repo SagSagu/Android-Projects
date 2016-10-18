@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.daksha.myapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/goku_1"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MenuActivity"
+            android:label="Menu" />
+        <activity
+            android:name=".ToastActivity"
+            android:label="Toast Message" />
+        <activity
+            android:name=".Greet_User"
+            android:label="Greet User">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".NewActivity"
+            android:label="New Activity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="Main Activity" />
+        <activity
+            android:name=".SimpleCalculatorActivity"
+            android:label="Simple Calculator" />
+        <activity
+            android:name=".BenchmarkingActivity"
+            android:label="Benchmarking" />
+        <activity
+            android:name=".WebViewActivity"
+            android:label="Web View" />
+        <activity
+            android:name=".SendTextActivity"
+            android:label="Sending Message" />
+        <activity
+            android:name=".MassageActivity"
+            android:label="Massage" />
+        <activity
+            android:name=".NavigatorActivity"
+            android:label="Navigator Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NewsActivity"
+            android:label="News Activity" >
+
+        </activity>
+        <activity
+            android:name=".LifeCycleActivity"
+            android:label="Activity LifeCycle" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".ContextMenuActivity"
+            android:label="Context Menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".BackgroundColor"
+            android:label="Background Color">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:onClick="toastMessage"
+            android:text="Top Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTopLeft"
+            android:layout_weight="0.30"
+            android:textAlignment="center" />
+
+        <Button
+            android:onClick="toastMessage"
+            android:text="Top Center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTopCenter"
+            android:layout_weight="0.30"
+            android:textAlignment="center" />
+
+        <Button
+            android:onClick="toastMessage"
+            android:text="Top Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTopRight"
+            android:layout_weight="0.30"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_weight="0.36">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:onClick="toastMessage"
+            android:text="Middle Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMiddleLeft"
+            android:layout_weight="0.30"
+            android:textAlignment="center" />
+
+        <Button
+            android:onClick="toastMessage"
+            android:text="Middle Center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMiddleCenter"
+            android:layout_weight="0.30"
+            android:textAlignment="center" />
+
+        <Button
+            android:onClick="toastMessage"
+            android:text="Middle Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMiddleRight"
+            android:layout_weight="0.30"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_weight="0.36">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <Button
+            android:onClick="toastMessage"
+            android:text="Bottom Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBottomLeft"
+            android:layout_weight="0.30"
+            android:textAlignment="center" />
+
+        <Button
+            android:onClick="toastMessage"
+            android:text="Bottom Center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBottomCenter"
+            android:layout_weight="0.30"
+            android:textAlignment="center" />
+
+        <Button
+            android:onClick="toastMessage"
+            android:text="Bottom Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBottomRight"
+            android:layout_weight="0.30"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+
+</LinearLayout>
