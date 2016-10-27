@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_registration_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.daksha.myapp.UserRegistrationActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Enter Your Full Name"
+            android:id="@+id/etFullName" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Enter Your email"
+            android:id="@+id/etemail" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:hint="Enter New Password"
+            android:id="@+id/etPassword" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:hint="Re-Enter your Password"
+            android:id="@+id/etReEnterPassword" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Enter A Valid Mobile Number"
+            android:id="@+id/etMobileNumber" />
+
+        <TextView
+            android:text="Gender"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:id="@+id/tvGender" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rgGender">
+
+            <RadioButton
+                android:text="Male"
+                android:textSize="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbMale" />
+
+            <RadioButton
+                android:text="FeMale"
+                android:textSize="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbFeMale" />
+
+            <RadioButton
+                android:text="Others"
+                android:textSize="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbOthers" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Date Of Birth"
+            android:textSize="25dp"/>
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="DD/MM/YYYY"
+            android:id="@+id/etDOB"
+            android:textSize="25dp"/>
+
+        <ImageButton
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ibDOB"
+            android:src="@drawable/calendar"/>
+
+        <Button
+            android:onClick="submit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            android:textSize="25dp"
+            android:id="@+id/btnSubmit"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

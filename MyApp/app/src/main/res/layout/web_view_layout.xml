@@ -3,4 +3,14 @@
     android:id="@+id/wvFelight"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    />
+    >
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="170dp"
+        android:layout_y="235dp"
+        android:id="@+id/pbWeb"
+        android:textAlignment="center" />
+</WebView>

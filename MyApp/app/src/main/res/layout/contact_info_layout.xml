@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contact_info_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.daksha.myapp.ContactInfoActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Information"
+        android:textSize="25dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:onClick="getContactInformation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Contact Information"
+        android:id="@+id/btnConcatInformation"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contact Information Will Be Displayed Here"
+        android:id="@+id/tvContact"
+        android:textSize="25dp"/>
+
+</LinearLayout>

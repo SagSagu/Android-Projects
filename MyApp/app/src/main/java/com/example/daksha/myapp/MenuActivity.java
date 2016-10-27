@@ -1,5 +1,6 @@
 package com.example.daksha.myapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -42,11 +43,12 @@ public class MenuActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.settings)
-            Toast.makeText(getBaseContext(),"Settings is selected",Toast.LENGTH_SHORT).show();
-        else if(item.getItemId()==R.id.about)
+        if (item.getItemId() == R.id.settings) {
+           // startActivity(new Intent(this, New.class));
+            Toast.makeText(getBaseContext(), "Settings is selected", Toast.LENGTH_SHORT).show();
+        }else if(item.getItemId()==R.id.about)
             Toast.makeText(getBaseContext(),"About is selected",Toast.LENGTH_SHORT).show();
-        else
+        else if(item.getItemId() ==R.id.nothing)
             Toast.makeText(getBaseContext(),"Nothing is selected",Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
     }

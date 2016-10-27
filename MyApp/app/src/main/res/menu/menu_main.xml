@@ -17,4 +17,10 @@
         android:title="Nothing"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/share"
+        android:title="Share"
+        android:icon="@drawable/multimedia"
+        app:showAsAction="always"/>
+
 </menu>

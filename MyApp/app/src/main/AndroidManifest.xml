@@ -5,6 +5,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -18,15 +28,10 @@
         <activity
             android:name=".ToastActivity"
             android:label="Toast Message" />
+        <activity android:name=".New" />
         <activity
             android:name=".Greet_User"
-            android:label="Greet User">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:label="Greet User" />
         <activity
             android:name=".NewActivity"
             android:label="New Activity" />
@@ -50,39 +55,79 @@
             android:label="Massage" />
         <activity
             android:name=".NavigatorActivity"
-            android:label="Navigator Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="Navigator Activity" />
         <activity
             android:name=".NewsActivity"
-            android:label="News Activity" >
-
-        </activity>
+            android:label="News Activity" />
         <activity
             android:name=".LifeCycleActivity"
-            android:label="Activity LifeCycle" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:label="Activity LifeCycle" />
         <activity
             android:name=".ContextMenuActivity"
-            android:label="Context Menu">
+            android:label="Context Menu" />
+        <activity
+            android:name=".BackgroundColor"
+            android:label="Background Color" />
+        <activity
+            android:name=".ImageAnimation"
+            android:label="Image Animation" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:label="Splash Screen"
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".ImageSharingActivity"
+            android:label="Image Sharing" />
+        <activity
+            android:name=".AudioPlayerActivity"
+            android:label="Audio Player" />
+        <activity
+            android:name=".ToggleWifiActivity"
+            android:label="Toggle On/Off Wifi" />
+        <activity
+            android:name=".BroadcastReceiverActivity"
+            android:label="Broadcast Receiver" />
+
+        <receiver android:name=".MyReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="sagar.CUSTOM_INTENT" />
             </intent-filter>
+        </receiver>
 
+        <activity
+            android:name=".AlbumDesignActivity"
+            android:label="Album Design" />
+        <activity
+            android:name=".UserRegistrationActivity"
+            android:label="User Registration" />
+        <activity
+            android:name=".WindowsThemeActivity"
+            android:label="Windows Theme" />
+        <activity
+            android:name=".ImageEditActivity"
+            android:label="Image Edit">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
         </activity>
-        <activity android:name=".BackgroundColor"
-            android:label="Background Color">
+        <activity
+            android:name=".A1"
+            android:label="A1" />
+        <activity
+            android:name=".A2"
+            android:label="A2" />
+        <activity
+            android:name=".ContactInfoActivity"
+            android:label="Contact Information" />
+        <activity
+            android:name=".ListOfSensorsActivity"
+            android:label="List Of Sensors"></activity>
+        <activity android:name=".MagneticFieldCompass"
+            android:label="Magnetic Field Compass">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

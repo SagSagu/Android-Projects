@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/ScrollView01"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fillViewport="true"
+android:scrollbars="none" >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.daksha.myapp.WindowsThemeActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:onClick="navigation"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        android:text="Benchmark"
+        android:id="@+id/btnBenchmark"
+        android:background="@drawable/button_orange"
+        android:textColor="#FFFDBD"
+        android:textSize="25sp"
+        android:layout_alignTop="@+id/btnGreet"
+        android:layout_alignRight="@+id/btnCalculator"
+        android:layout_alignEnd="@+id/btnCalculator"
+        android:layout_alignBottom="@+id/btnGreet"
+        android:layout_toRightOf="@+id/btnWeb"
+        android:layout_toEndOf="@+id/btnWeb" />
+
+    <Button
+        android:onClick="navigation"
+        android:layout_width="175dp"
+        android:layout_height="117dp"
+        android:text="Greet User"
+        android:id="@+id/btnGreet"
+        android:background="@drawable/button_lavender"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+
+    <Button
+        android:onClick="navigation"
+        android:layout_width="fill_parent"
+        android:layout_height="65dp"
+        android:text="Calculator"
+        android:id="@+id/btnCalculator"
+        android:background="@drawable/button_red"
+        android:textColor="#FFFDBD"
+        android:textSize="30sp"
+        android:layout_gravity="right"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btnBenchmark"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:onClick="navigation"
+        android:layout_width="185dp"
+        android:layout_height="65dp"
+        android:text="Web View"
+        android:id="@+id/btnWeb"
+        android:background="@drawable/button_lavender"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:onClick="navigation"
+        android:layout_width="130dp"
+        android:layout_height="65dp"
+        android:text="Toast"
+        android:id="@+id/btnToast"
+        android:background="@drawable/button_orange"
+        android:textColor="#FFFDBD"
+        android:textSize="28sp"
+        android:layout_gravity="right"
+        android:layout_above="@+id/btnFelight"
+        android:layout_alignRight="@+id/btnBenchmark"
+        android:layout_alignEnd="@+id/btnBenchmark" />
+
+    <Button
+        android:onClick="navigation"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:text="Google News"
+        android:id="@+id/btnGoogle"
+        android:background="@drawable/gradiant_blue"
+        android:textColor="#95FF85"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btnFelight"
+        android:layout_alignRight="@+id/btnToast"
+        android:layout_alignEnd="@+id/btnToast" />
+
+    <Button
+        android:onClick="navigation"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:text="Felight News"
+        android:background="@drawable/gradiant_blue"
+        android:textColor="#95FF85"
+        android:textSize="15sp"
+        android:id="@+id/btnFelight"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btnWeb"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:onClick="navigation"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:text="Send Text"
+        android:id="@+id/btnSendtext"
+        android:background="@drawable/button_red"
+        android:textColor="#FFFDBD"
+        android:textSize="25sp"
+        android:layout_gravity="right"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btnGoogle"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+</ScrollView>

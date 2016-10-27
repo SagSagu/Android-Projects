@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/a1_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.daksha.myapp.A1"
+    android:orientation="vertical">
+
+    <Button
+        android:onClick="getUserName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Launch A2"
+        android:id="@+id/btnLaunchA2"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Result will be displayed here"
+        android:id="@+id/tvName"
+        android:textSize="25dp"/>
+
+</LinearLayout>

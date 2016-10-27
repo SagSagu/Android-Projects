@@ -42,4 +42,6 @@ public class NavigatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigator_layout);
     }
+
+
 }
