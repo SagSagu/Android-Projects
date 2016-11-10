@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_account_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.daksha.myapp.MyAccountActivity"
+    android:orientation="vertical">
+
+    <GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Full Name:"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvFName"
+            android:textSize="25dp"
+            android:gravity="right"
+            android:layout_row="0"
+            android:layout_column="0"/>
+
+        <EditText
+            android:text="Full Name:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etFName"
+            android:textSize="25dp"
+            android:gravity="left"
+            android:layout_row="0"
+            android:layout_column="1"/>
+
+        <TextView
+            android:text="E-Mail:"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvEMail"
+            android:textSize="25dp"
+            android:gravity="right"
+            android:layout_row="1"
+            android:layout_column="0"/>
+
+        <EditText
+            android:text="E-Mail:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etEMail"
+            android:textSize="25dp"
+            android:gravity="left"
+            android:layout_row="1"
+            android:layout_column="1"/>
+
+        <TextView
+            android:text="Mobile No:"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMNo"
+            android:textSize="25dp"
+            android:gravity="right"
+            android:layout_row="2"
+            android:layout_column="0"/>
+
+        <EditText
+            android:text="Mobile No:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etMNo"
+            android:textSize="25dp"
+            android:gravity="left"
+            android:layout_row="2"
+            android:layout_column="1"/>
+
+        <TextView
+            android:text="Gender:"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSex"
+            android:textSize="25dp"
+            android:gravity="right"
+            android:layout_row="3"
+            android:layout_column="0"/>
+
+        <TextView
+            android:text="Gender:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSSex"
+            android:textSize="25dp"
+            android:gravity="left"
+            android:layout_row="3"
+            android:layout_column="1"/>
+
+        <TextView
+            android:text="DOB:"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDob"
+            android:textSize="25dp"
+            android:gravity="right"
+            android:layout_row="4"
+            android:layout_column="0"/>
+
+        <EditText
+            android:text="DOB:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etDob"
+            android:textSize="25dp"
+            android:gravity="left"
+            android:layout_row="4"
+            android:layout_column="1"/>
+
+        <TextView
+            android:text="Password:"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPas"
+            android:textSize="25dp"
+            android:gravity="right"
+            android:layout_row="5"
+            android:layout_column="0"/>
+
+        <EditText
+            android:text="Password:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etPas"
+            android:textSize="25dp"
+            android:gravity="left"
+            android:layout_row="5"
+            android:layout_column="1"/>
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <Button
+        android:onClick="saveProfile"
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/btnSave"/>
+
+    </LinearLayout>
+
+</LinearLayout>

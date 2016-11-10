@@ -60,6 +60,13 @@
             android:id="@+id/ibVignette"/>
 
     </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvStatus"
+            android:textSize="25dp"/>
+
     </LinearLayout>
     </ScrollView>
 

@@ -20,6 +20,7 @@
         android:orientation="vertical">
 
         <EditText
+            android:text=""
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -27,13 +28,15 @@
             android:id="@+id/etFullName" />
 
         <EditText
+            android:text=""
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:hint="Enter Your email"
             android:id="@+id/etemail" />
 
-        <EditText
+        <!--<EditText
+            android:text=""
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="numberPassword"
@@ -41,13 +44,15 @@
             android:id="@+id/etPassword" />
 
         <EditText
+            android:text=""
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="numberPassword"
             android:hint="Re-Enter your Password"
-            android:id="@+id/etReEnterPassword" />
+            android:id="@+id/etReEnterPassword" />-->
 
         <EditText
+            android:text=""
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
@@ -95,11 +100,12 @@
             android:text="Date Of Birth"
             android:textSize="25dp"/>
 
-        <EditText
+        <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="DD/MM/YYYY"
-            android:id="@+id/etDOB"
+            android:text="Select Your DOB From Below Calendar"
+            android:hint="Select Your DOB From Below Calendar"
+            android:id="@+id/tvDOB"
             android:textSize="25dp"/>
 
         <ImageButton

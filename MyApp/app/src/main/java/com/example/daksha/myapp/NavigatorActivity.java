@@ -34,6 +34,9 @@ public class NavigatorActivity extends AppCompatActivity {
                 felight.putExtra("Message","Felight News");
                 startActivity(felight);
                 break;
+            case R.id.btnUserRegistration:
+                startActivity(new Intent(NavigatorActivity.this, UserRegistrationActivity.class));
+                break;
         }
     }
 

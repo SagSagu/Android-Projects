@@ -5,9 +5,11 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInstaller;
 import android.media.tv.TvInputService;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,14 +24,19 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.daksha.myapp.utils.Util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.Properties;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -41,19 +48,43 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import static com.example.daksha.myapp.LoginUser.NREG;
+
 public class UserRegistrationActivity extends AppCompatActivity implements View.OnClickListener {
+
+    public static SharedPreferences sharedPreferences;
+    public static final String UN_KEY = "UN_KEY";
+    public static final String UE_KEY = "UE_KEY";
+    public static final String UM_KEY = "UM_KEY";
+    public static final String UG_KEY = "UG_KEY";
+    public static final String UD_KEY = "UD_KEY";
+    public static final String UP_KEY = "UP_KEY";
+
+    public static final String UD_PREF = "UD_PREF";
+
+    public static String loginEmail;
+    public static String password;
+
+    private RelativeLayout user_registration_layout;
 
     private EditText etFullName, etemail, etPassword, etReEnterPassword, etMobileNumber;
     private RadioButton rbMale, rbFeMale, rbOthers;
     private RadioGroup rgGender;
     private static ImageButton ibDOB;
     private Button btnSubmit;
-    private static EditText etDOB;
+    private static TextView tvDOB;
+
+    private boolean yearValidity;
 
     private Calendar cal;
     private int day;
     private int month;
     private int year;
+
+    public static int selectedId;
+
+    private String reg;
+    //Util util = new Util();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,15 +93,17 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
 
         etFullName=(EditText)findViewById(R.id.etFullName);
         etemail=(EditText)findViewById(R.id.etemail);
-        etPassword=(EditText)findViewById(R.id.etPassword);
-        etReEnterPassword=(EditText)findViewById(R.id.etReEnterPassword);
+        //etPassword=(EditText)findViewById(R.id.etPassword);
+        /*etReEnterPassword=(EditText)findViewById(R.id.etReEnterPassword);*/
         etMobileNumber=(EditText)findViewById(R.id.etMobileNumber);
-        etDOB=(EditText) findViewById(R.id.etDOB);
+        tvDOB=(TextView) findViewById(R.id.tvDOB);
 
         rgGender=(RadioGroup)findViewById(R.id.rgGender);
         rbMale=(RadioButton)findViewById(R.id.rbMale);
         rbFeMale=(RadioButton)findViewById(R.id.rbFeMale);
         rbOthers=(RadioButton)findViewById(R.id.rbOthers);
+
+        //rgGender.setOnCheckedChangeListener(radioGroupOnCheckedChangeListener);
 
         ibDOB = (ImageButton) findViewById(R.id.ibDOB);
         cal = Calendar.getInstance();
@@ -79,7 +112,82 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
         year = cal.get(Calendar.YEAR);
         ibDOB.setOnClickListener(this);
 
+        sharedPreferences = getSharedPreferences(UD_PREF,MODE_PRIVATE);
+
+        reg = sharedPreferences.getString(NREG,null);
+
+        if(NREG.equals(reg))
+            clearAll();
+
+        loadPreferences();
+        //LoadRbPreferences();
     }
+
+    public void loadPreferences(){
+        //SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        etFullName.setText(sharedPreferences.getString(UN_KEY,etFullName.getText().toString()));
+        etemail.setText(sharedPreferences.getString(UE_KEY,etemail.getText().toString()));
+        etMobileNumber.setText(sharedPreferences.getString(UM_KEY,etMobileNumber.getText().toString()));
+        tvDOB.setText(sharedPreferences.getString(UD_KEY,tvDOB.getText().toString()));
+
+        if(sharedPreferences.getBoolean("MALE", false))
+            rbMale.setChecked(true);
+        else if(sharedPreferences.getBoolean("FEMALE",false))
+            rbFeMale.setChecked(true);
+        else if(sharedPreferences.getBoolean("OTHERS",false))
+            rbOthers.setChecked(true);
+    }
+
+    @Override
+    protected void onResume() {
+        loadPreferences();
+        super.onResume();
+    }
+
+    @Override
+    protected void onStart() {
+        loadPreferences();
+        super.onStart();
+    }
+
+    @Override
+    protected void onPause() {
+        selectedId = rgGender.getCheckedRadioButtonId();
+        Util.savePreferences(UN_KEY,etFullName.getText().toString());
+        Util.savePreferences(UE_KEY,etemail.getText().toString());
+        Util.savePreferences(UM_KEY,etMobileNumber.getText().toString());
+        Util.savePreferences(UD_KEY,tvDOB.getText().toString());
+        Util.savePreferences(UP_KEY,password);
+        super.onPause();
+    }
+
+    /*@Override
+    protected void onDestroy() {
+        savePreferences(UN_KEY,etFullName.getText().toString());
+        savePreferences(UE_KEY,etemail.getText().toString());
+        savePreferences(UM_KEY,etMobileNumber.getText().toString());
+        super.onDestroy();
+    }*/
+
+    @Override
+    protected void onRestart() {
+        loadPreferences();
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStop() {
+        selectedId = rgGender.getCheckedRadioButtonId();
+        Util.savePreferences(UN_KEY,etFullName.getText().toString());
+        Util.savePreferences(UE_KEY,etemail.getText().toString());
+        Util.savePreferences(UM_KEY,etMobileNumber.getText().toString());
+        Util.savePreferences(UD_KEY,tvDOB.getText().toString());
+        Util.savePreferences(UP_KEY,password);
+        //clearAll();
+        super.onStop();
+
+    }
+
 
     @Override
     public void onClick (View v){
@@ -98,26 +206,37 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
             Calendar age =new GregorianCalendar(selectedYear,selectedMonth,selectedDay);
             Calendar minAge = new GregorianCalendar();
             minAge.add(Calendar.YEAR, -16);
+            tvDOB.setText(selectedDay + " / " + (selectedMonth + 1) + " / "
+                    + selectedYear);
             if(minAge.before(age)){
                 Toast.makeText(getBaseContext(),"Your age Must Be Above 16",Toast.LENGTH_SHORT).show();
                 final Animation animShake= AnimationUtils.loadAnimation(getBaseContext(),R.anim.anim_shake);
-                etDOB.startAnimation(animShake);
-            } else {
-                etDOB.setText(selectedDay + " / " + (selectedMonth + 1) + " / "
-                        + selectedYear);
-            }
+                tvDOB.startAnimation(animShake);
+                yearValidity = false;
+            } else
+                yearValidity = true;
+
         }
     };
 
     public void submit(View view) {
 
+        selectedId = rgGender.getCheckedRadioButtonId();
+        Util.savePreferences(UN_KEY,etFullName.getText().toString());
+        Util.savePreferences(UE_KEY,etemail.getText().toString());
+        Util.savePreferences(UM_KEY,etMobileNumber.getText().toString());
+        Util.savePreferences(UD_KEY,tvDOB.getText().toString());
+        Util.savePreferences(UP_KEY,password);
+
         if(validates()==true) {
-            sendEmail();
-            if (sendEmail()==true) {
-                clearAll();
+            boolean val = sendEmail();
+            if (val == true) {
+
+                startActivity(new Intent(getBaseContext(),LoginUser.class));
+                Toast.makeText(getBaseContext(),"Message Sent",Toast.LENGTH_SHORT).show();
+                //clearAll();
             }
         }
-
     }
 
     protected boolean sendEmail() {
@@ -125,9 +244,14 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
         String email = etemail.getText().toString();
         String subject = "Registration Successful";
         String message = "Successfully Registered in User Registration";
+        String pas = Util.generateRandomPassword();
+
+        password = pas;
+
+        Util.savePreferences(UP_KEY,password);
 
         //Creating SendMail object
-        SendMail sm = new SendMail(this, email, subject, message);
+        SendMail sm = new SendMail(this, email, subject, message, pas);
 
         //Executing sendmail to send email
         sm.execute();
@@ -171,7 +295,7 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
             }
         }
 
-        if (TextUtils.isEmpty(etPassword.getText().toString())) {
+        /*if (TextUtils.isEmpty(etPassword.getText().toString())) {
             etPassword.setError("Please Enter Your New Password");
             final Animation animShake= AnimationUtils.loadAnimation(this,R.anim.anim_shake);
             etPassword.startAnimation(animShake);
@@ -188,7 +312,7 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
             final Animation animShake= AnimationUtils.loadAnimation(this,R.anim.anim_shake);
             etReEnterPassword.startAnimation(animShake);
             return false;
-        }
+        }*/
 
         if (TextUtils.isEmpty(etMobileNumber.getText().toString())) {
             etMobileNumber.setError("Enter Your Mobile Number");
@@ -209,12 +333,17 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
             return false;
         }
 
-        if(TextUtils.isEmpty(etDOB.getText().toString())){
-            etDOB.setError("Enter Your DOB");
+        if(TextUtils.isEmpty(tvDOB.getText().toString())){
+            tvDOB.setError("Enter Your DOB");
             final Animation animShake= AnimationUtils.loadAnimation(this,R.anim.anim_shake);
-            etDOB.startAnimation(animShake);
+            tvDOB.startAnimation(animShake);
             return false;
-        }
+        } /*else if(yearValidity == false){
+            Toast.makeText(getBaseContext(),"Your age Must Be Above 16",Toast.LENGTH_SHORT).show();
+            final Animation animShake= AnimationUtils.loadAnimation(getBaseContext(),R.anim.anim_shake);
+            tvDOB.startAnimation(animShake);
+            return false;
+        }*/
 
         return true;
     }
@@ -226,8 +355,7 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
         etReEnterPassword.setText("");
         etMobileNumber.setText("");
         rgGender.clearCheck();
-        etDOB.setText("");
-
+        tvDOB.setText("");
     }
 
 }

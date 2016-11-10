@@ -2,6 +2,7 @@ package com.example.daksha.myapp;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -30,24 +31,26 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
     private String email;
     private String subject;
     private String message;
+    private String password;
 
     //Progressdialog to show while sending email
     private ProgressDialog progressDialog;
 
     //Class Constructor
-    public SendMail(Context context, String email, String subject, String message){
+    public SendMail(Context context, String email, String subject, String message, String password){
         //Initializing variables
         this.context = context;
         this.email = email;
         this.subject = subject;
         this.message = message;
+        this.password = password;
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         //Showing progress dialog while sending email
-        progressDialog = ProgressDialog.show(context,"Sending message","Please wait...",false,false);
+        progressDialog = ProgressDialog.show(context,"Loading","Please wait...",false,false);
     }
 
     @Override
@@ -56,7 +59,6 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
         //Dismissing the progress dialog
         progressDialog.dismiss();
         //Showing a success message
-        Toast.makeText(context,"Message Sent",Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -91,8 +93,8 @@ public class SendMail extends AsyncTask<Void,Void,Void> {
             mm.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
             //Adding subject
             mm.setSubject(subject);
-            //Adding message
-            mm.setText(message);
+            //Adding message and Password
+            mm.setText(message + "\nYour Password is : " + password );
 
             //Sending email
             Transport.send(mm);

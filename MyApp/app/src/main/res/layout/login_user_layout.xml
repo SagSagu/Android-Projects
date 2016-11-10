@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_user_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.daksha.myapp.LoginUser"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:text="Login/Registration"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginTop="100dp"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your e-mail ID"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:id="@+id/etLoginEmail"/>
+
+    <EditText
+        android:hint="Enter Your Password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/etLoginPassword"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:onClick="loginSubmit"
+        android:text="Login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLoginSubmit"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:onClick="registerNow"
+            android:text="Register Now"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:id="@+id/tvRegisterNow"/>
+
+        <TextView
+            android:onClick="forgotPassword"
+            android:text="Forgot Password"
+            android:textSize="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:id="@+id/tvForgotPassword"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

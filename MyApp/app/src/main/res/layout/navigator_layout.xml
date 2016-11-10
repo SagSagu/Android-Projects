@@ -60,4 +60,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnFelightNews" />
 
+    <Button
+        android:onClick="navigation"
+        android:text="User Registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnUserRegistration" />
+
 </LinearLayout>

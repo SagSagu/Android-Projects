@@ -1,0 +1,27 @@
+<records>
+
+    <employee>
+        <name>Sagar</name>
+        <salary>50000</salary>
+        <role>Peon</role>
+    </employee>
+
+    <employee>
+        <name>Moulali</name>
+        <salary>60000</salary>
+        <role>Asst.Manager</role>
+    </employee>
+
+    <employee>
+        <name>Vikram</name>
+        <salary>70000</salary>
+        <role>Manager</role>
+    </employee>
+
+    <employee>
+        <name>Vamsi</name>
+        <salary>80000</salary>
+        <role>CEO</role>
+    </employee>
+
+</records>
