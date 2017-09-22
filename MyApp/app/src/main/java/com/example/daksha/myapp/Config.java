@@ -5,6 +5,6 @@ package com.example.daksha.myapp;
  */
 
 public class Config {
-    public static final String EMAIL ="sagsaguz@gmail.com";
-    public static final String PASSWORD ="7259980952@";
+    public static final String EMAIL ="email";
+    public static final String PASSWORD ="password";
 }
